@@ -31,7 +31,7 @@ def get_dataset_popularity_by_tasks(connection_string,
         logger.info('calculates popularity using tasks from {0} to {1}'.format(
             from_date.strftime('%d-%m-%Y'), to_date.strftime('%d-%m-%Y'))
         )
-        dataset_pattern = re.compile(r'^(mc.*|data.*\.DAOD.*\..*)$')
+        dataset_pattern = re.compile(r'^(mc.*|data).*\.DAOD.*\..*$')
         tid_pattern = re.compile(r'_tid\d+_00')
         connection = cx_Oracle.connect(connection_string)
         cursor = connection.cursor()
